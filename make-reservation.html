@@ -1,0 +1,33 @@
+<!--  Reservation Form -->
+<h2>Reservation Form</h2>
+<form role="form" novalidate="" class="form-horizontal" name="resForm" ng-submit="submitData()" ng-controller="SubmitCtrl">
+    <fieldset class="form-group col-xs-6">
+        <label for="firstName">First name:</label>
+        <input type="text" class="form-control" id="firstName" placeholder="First name" required ng-model="firstName"/>
+    </fieldset>
+    <fieldset class="form-group col-xs-6">
+        <label for="lastName">Last name:</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Last name" required ng-model="lastName"/>
+    </fieldset>
+    <fieldset class="form-group col-xs-6">
+        <label for="date">Dining date:</label>
+        <input type="date" class="form-control" ng-class="{'has-error':resForm.date.$invalid && resForm.date.$dirty}" id="date" name="date" placeholder="yyyy-MM-dd" min="2013-01-01" max="2013-12-31" required ng-model="date"/>
+        <span>Not a valid date</span>
+    </fieldset>
+    <fieldset class="form-group col-xs-6">
+        <label for="covers">Number of Covers</label>
+        <input type="number" class="form-control" id="covers" value="1" min="1" required ng-model="covers"/>
+    </fieldset>
+    <fieldset class="form-group col-xs-6">
+        <label for="phone">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" placeholder="0000-1111-2222" name="phone" required ng-model="pnoneNumber"/>
+    </fieldset>
+    <fieldset class="form-group col-xs-6">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" ng-class="{'has-error': resForm.email.$invalid-email && resForm.email.$dirty}" name="email" id="email" placeholder="jimmyDean@example.org" title="Email" required ng-model="email"/>
+        <span>Valid email is required</span>
+    </fieldset>
+    <fieldset class="form-group col-xs-12">
+        <input type="submit" class="form-control btn btn-primary" value="Make Reservation" />
+    </fieldset>
+</form>
