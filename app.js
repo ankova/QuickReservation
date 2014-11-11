@@ -17,42 +17,9 @@
                 restricted: "E",
                 replace: true,
                 controller: function($scope, $http){
-
-                    //for testing
-                    var reservations = [
-                        {
-                            "firstName" : "Peter",
-                            "lastName" : "Lockh",
-                            "email" : "p.lockh@gmail.com",
-                            "date": "2014-11-10",
-                            "phoneNumber": "0000-4533-2124",
-                            "covers": "5"
-                        },
-                        {
-                            "firstName" : "John",
-                            "lastName" : "Doe",
-                            "email" : "john.doe@gmail.com",
-                            "date": "2014-12-24",
-                            "phoneNumber": "0000-4531-5133",
-                            "covers": "3"
-                        },
-                        {
-                            "firstName" : "Loren",
-                            "lastName" : "Doe",
-                            "email" : "loren.doe@gmail.com",
-                            "date": "2014-12-31",
-                            "phoneNumber": "0200-4533-2124",
-                            "covers": "7"
-                        }
-                    ];
-
-                    $scope.reservations = reservations;
-
-                    //in production
-
-                    //$http.get("reservations.json").success(function(data) {
-                    //    $scope.reservations = data;
-                    //});
+                    $http.get("reservations.json").success(function(data) {
+                        $scope.reservations = data;
+                    });
                 }
             };
         })
