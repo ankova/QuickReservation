@@ -11,7 +11,7 @@
     </fieldset>
     <fieldset class="form-group col-xs-6">
         <label for="date">Dining date:</label>
-        <input type="date" class="form-control" ng-class="{'has-error':resForm.date.$invalid && resForm.date.$dirty}" id="date" name="date" placeholder="yyyy-MM-dd" min="2013-01-01" max="2013-12-31" required ng-model="date"/>
+        <input type="date" class="form-control" ng-class="{'has-error':resForm.date.$error.date}" id="date" name="date" placeholder="yyyy-MM-dd" min="2013-01-01" max="2013-12-31" required ng-model="date"/>
         <span>Not a valid date</span>
     </fieldset>
     <fieldset class="form-group col-xs-6">
@@ -24,7 +24,7 @@
     </fieldset>
     <fieldset class="form-group col-xs-6">
         <label for="email">Email address:</label>
-        <input type="email" class="form-control" ng-class="{'has-error': resForm.email.$invalid-email && resForm.email.$dirty}" name="email" id="email" placeholder="jimmyDean@example.org" title="Email" required ng-model="email"/>
+        <input type="email" class="form-control" ng-class="{'has-error':resForm.email.$error.email}" name="email" id="email" placeholder="jimmyDean@example.org" title="Email" required ng-model="email"/>
         <span>Valid email is required</span>
     </fieldset>
     <fieldset class="form-group col-xs-12">
